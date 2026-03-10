@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CompliAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COMPLIAI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-font-family:Segoe UI,Arial,sans-serif;
+font-family:'Inter',sans-serif;
 background:#0b1320;
 color:#e6ecff;
-overflow:hidden;
+overflow-x:hidden;
 }
 
 /* HEADER */
@@ -21,46 +24,40 @@ position:fixed;
 top:0;
 width:100%;
 background:#0b1320;
-padding:26px 60px;
+padding:20px 40px;
 border-bottom:1px solid #1e2c4d;
 z-index:20;
 }
 
 .brand{
+font-family:'Poppins';
 font-size:34px;
+letter-spacing:4px;
 font-weight:600;
-letter-spacing:1px;
+text-transform:uppercase;
 }
-
-/* TAGLINE */
 
 .tagline{
+font-family:'Poppins';
 font-size:18px;
-margin-top:6px;
+color:#f0c75e;
+margin-top:4px;
 }
-
-.tagline span{
-color:#e8c547;
-font-weight:500;
-}
-
-/* NAV */
 
 .navbar{
-margin-top:18px;
-font-size:14px;
+margin-top:12px;
 }
 
 .navbar span{
-margin-right:28px;
+margin-right:20px;
 cursor:pointer;
+font-size:14px;
 color:#c9d1e8;
-padding-bottom:4px;
 }
 
 .navbar span:hover{
-color:white;
-border-bottom:1px solid #e8c547;
+color:#fff;
+border-bottom:1px solid #f0c75e;
 }
 
 /* SLIDES */
@@ -68,9 +65,9 @@ border-bottom:1px solid #e8c547;
 .container{
 display:flex;
 height:100vh;
-width:600vw;
-transition:transform .8s ease;
-padding-top:150px;
+width:700vw;
+transition:transform .7s ease;
+padding-top:130px;
 }
 
 .slide{
@@ -79,86 +76,109 @@ padding:60px;
 box-sizing:border-box;
 display:flex;
 gap:40px;
-align-items:flex-start;
 }
-
-/* TEXT */
 
 .text{
-width:72%;
-line-height:1.6;
+width:60%;
 }
-
-h2{
-font-size:30px;
-font-weight:500;
-margin-bottom:18px;
-}
-
-p{
-font-size:17px;
-color:#cfd8ff;
-margin-bottom:15px;
-}
-
-.highlight{
-color:#e8c547;
-font-weight:600;
-}
-
-/* MEDIA */
 
 .media{
-width:28%;
+width:40%;
 height:420px;
-border:1px solid #24355c;
+border:1px solid #23365f;
 background:#0e172e;
 display:flex;
 align-items:center;
 justify-content:center;
 }
 
-.media img{
+.media img,video{
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-/* VIDEO - DO NOT CROP */
-
-video{
-width:100%;
-height:100%;
-object-fit:contain;
-background:black;
+h2{
+font-family:'Poppins';
+font-size:32px;
+margin-bottom:20px;
 }
 
-/* SLIDE ARROWS */
+h3{
+font-family:'Poppins';
+color:#f0c75e;
+margin-top:20px;
+}
+
+p{
+font-size:17px;
+line-height:1.7;
+margin-bottom:16px;
+}
+
+.highlight{
+color:#f0c75e;
+}
+
+/* FLOW */
+
+.flow{
+margin-top:20px;
+}
+
+.node{
+padding:10px;
+border-left:3px solid #2f3e67;
+margin-bottom:10px;
+}
+
+.node.active{
+border-left:3px solid #f0c75e;
+background:#121c34;
+}
+
+/* ARROWS */
 
 .arrow{
 position:fixed;
 top:50%;
 transform:translateY(-50%);
-font-size:38px;
-color:#c9d1e8;
+font-size:36px;
 cursor:pointer;
-user-select:none;
 padding:10px 16px;
-background:rgba(15,22,40,.6);
+background:rgba(15,22,40,.7);
 border:1px solid #2c3e70;
 }
 
-.arrow:hover{
-background:#1d2947;
-color:white;
+#prev{left:10px}
+#next{right:10px}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.container{
+flex-direction:column;
+width:100%;
+height:auto;
 }
 
-#prev{
-left:20px;
+.slide{
+flex-direction:column;
 }
 
-#next{
-right:20px;
+.text,.media{
+width:100%;
+}
+
+.arrow{
+display:none;
+}
+
+.navbar{
+display:none;
+}
+
 }
 
 </style>
@@ -168,19 +188,20 @@ right:20px;
 
 <header>
 
-<div class="brand">CompliAI</div>
+<div class="brand">COMPLIAI</div>
 
 <div class="tagline">
-<span>Intelligent Compliance Through AI-Driven Regulatory Reasoning</span>
+Intelligent Compliance Through AI-Driven Regulatory Reasoning
 </div>
 
 <div class="navbar">
 <span onclick="gotoSlide(0)">Compliance Landscape</span>
 <span onclick="gotoSlide(1)">Regulatory Exposure</span>
-<span onclick="gotoSlide(2)">AI-Enabled Compliance</span>
-<span onclick="gotoSlide(3)">CompliAI Technology</span>
+<span onclick="gotoSlide(2)">AI Enabled Compliance</span>
+<span onclick="gotoSlide(3)">Technology Framework</span>
 <span onclick="gotoSlide(4)">Compliance Deliverables</span>
-<span onclick="gotoSlide(5)">Connect With Us</span>
+<span onclick="gotoSlide(5)">AI Compliance Engine</span>
+<span onclick="gotoSlide(6)">Connect</span>
 </div>
 
 </header>
@@ -191,71 +212,53 @@ right:20px;
 <!-- SLIDE 1 -->
 
 <section class="slide">
-
 <div class="text">
-
 <h2>The Modern <span class="highlight">Compliance Landscape</span></h2>
-
 <p>
-Enterprises today operate within increasingly complex regulatory
-environments shaped by emerging governance frameworks such as
-<span class="highlight">ISO 42001</span>,
-<span class="highlight">GDPR</span>,
-and the
-<span class="highlight">EU Artificial Intelligence Act</span>.
+Enterprises today operate in a complex regulatory ecosystem driven by
+frameworks such as ISO 42001, GDPR and the EU Artificial Intelligence Act.
+Organizations must ensure their systems, policies and AI capabilities
+remain compliant with these evolving regulations.
 </p>
 
 <p>
-These regulations require organizations to maintain strong governance
-models, transparent operational practices, risk management structures
-and auditable compliance controls.
+Traditional compliance programs rely heavily on manual interpretation of
+legal documentation and periodic audits. This process is resource intensive
+and often unable to keep pace with regulatory change.
 </p>
 
 <p>
-Organizations therefore invest significant effort in interpreting
-regulations, maintaining documentation, conducting internal audits
-and coordinating cross-department compliance programs.
+CompliAI introduces an intelligent system capable of continuously
+interpreting regulatory obligations and validating enterprise systems
+against those requirements.
 </p>
-
 </div>
 
 <div class="media">
-
 <video controls>
-<source src="The Startup Compliance Opportunity_720p_caption.mp4" type="video/mp4">
+<source src="The Startup Compliance Opportunity_720p_caption.mp4">
 </video>
-
 </div>
-
 </section>
 
 
 <!-- SLIDE 2 -->
 
 <section class="slide">
-
 <div class="text">
 
 <h2>Growing <span class="highlight">Regulatory Exposure</span></h2>
 
 <p>
-Global regulatory enforcement has intensified across privacy,
-data protection and AI governance frameworks.
+Regulators across the world are strengthening enforcement mechanisms
+for data protection, AI governance and digital accountability.
+Organizations that fail to comply face substantial financial penalties.
 </p>
 
 <p>
-Under <span class="highlight">GDPR</span>, regulators may impose
-penalties up to
-<span class="highlight">€20 million or 4% of global annual revenue</span>
-for violations involving personal data misuse or inadequate
-data protection practices.
-</p>
-
-<p>
-The <span class="highlight">EU AI Act</span> introduces additional
-enforcement mechanisms including fines reaching
-<span class="highlight">€35 million or 7% of global turnover</span>
-for prohibited AI systems or lack of governance controls.
+Under GDPR, organizations may face fines up to €20 million or 4% of
+global annual revenue. The EU Artificial Intelligence Act introduces
+additional penalties for high-risk AI systems.
 </p>
 
 </div>
@@ -270,26 +273,20 @@ for prohibited AI systems or lack of governance controls.
 <!-- SLIDE 3 -->
 
 <section class="slide">
-
 <div class="text">
 
-<h2>Advancing Toward <span class="highlight">AI-Enabled Compliance</span></h2>
+<h2>Advancing Toward <span class="highlight">AI Enabled Compliance</span></h2>
 
 <p>
-Traditional compliance management depends heavily on manual
-interpretation of regulatory documentation and periodic audit cycles.
+Artificial intelligence provides the capability to continuously
+interpret regulatory obligations and monitor enterprise systems.
+Instead of periodic audits, organizations gain continuous
+compliance intelligence.
 </p>
 
 <p>
-Artificial intelligence introduces a scalable method to interpret
-regulatory provisions, monitor enterprise systems and evaluate
-operational controls continuously.
-</p>
-
-<p>
-AI-driven compliance frameworks enable organizations to move from
-reactive regulatory assessments toward
-<span class="highlight">continuous compliance intelligence</span>.
+AI-driven compliance enables enterprises to identify risks
+before regulatory violations occur.
 </p>
 
 </div>
@@ -304,37 +301,25 @@ reactive regulatory assessments toward
 <!-- SLIDE 4 -->
 
 <section class="slide">
-
 <div class="text">
 
 <h2>The <span class="highlight">CompliAI Technology Framework</span></h2>
 
 <p>
-CompliAI applies
-<span class="highlight">intent-based regulatory reasoning</span>
-to interpret the purpose behind compliance requirements rather
-than relying solely on static checklists.
+CompliAI applies intent-based regulatory reasoning to interpret
+the purpose behind compliance requirements rather than relying
+on static rule checklists.
 </p>
 
 <p>
-A <span class="highlight">digital twin of compliance knowledge</span>
-converts regulatory provisions into structured XML-based
-mind-mapping models that replicate the reasoning process used
-by experienced compliance professionals.
+A Digital Twin Compliance Model maps regulatory obligations
+to enterprise systems and workflows.
 </p>
 
 <p>
-A probing analysis engine evaluates enterprise systems using
-<span class="highlight">quantum-inspired search exploration</span>
-to identify complex relationships between operational workflows
-and regulatory obligations.
-</p>
-
-<p>
-The platform integrates
-<span class="highlight">hybrid federated learning</span>
-supporting both horizontal and vertical learning structures
-while preserving organizational data privacy.
+Quantum-inspired search algorithms explore regulatory
+relationships while federated probing enables distributed
+compliance analysis across enterprise environments.
 </p>
 
 </div>
@@ -349,28 +334,18 @@ while preserving organizational data privacy.
 <!-- SLIDE 5 -->
 
 <section class="slide">
-
 <div class="text">
 
-<h2>Structured <span class="highlight">Compliance Deliverables</span></h2>
+<h2><span class="highlight">Compliance Deliverables</span></h2>
 
 <p>
-CompliAI generates more than
-<span class="highlight">35 compliance reports</span>
-supporting enterprise governance, certification readiness
-and regulatory audits.
+The CompliAI platform generates more than 35 compliance reports
+supporting enterprise governance and regulatory certification.
 </p>
 
 <p>
-These reports include AI risk classifications, data protection
-impact assessments, governance policies, transparency documentation
-and operational compliance logs.
-</p>
-
-<p>
-By automating documentation creation, organizations can
-significantly reduce the effort required to maintain
-audit-ready regulatory evidence.
+These reports include AI risk assessments, governance
+documentation, transparency reports and compliance audit evidence.
 </p>
 
 </div>
@@ -382,7 +357,45 @@ audit-ready regulatory evidence.
 </section>
 
 
-<!-- SLIDE 6 -->
+<!-- AI ENGINE -->
+
+<section class="slide">
+
+<div class="text">
+
+<h2><span class="highlight">AI Compliance Engine</span></h2>
+
+<div class="flow">
+
+<div class="node active" id="node1">Regulatory Knowledge</div>
+<div class="node" id="node2">Intent Extraction</div>
+<div class="node" id="node3">Digital Twin Model</div>
+<div class="node" id="node4">Quantum Search</div>
+<div class="node" id="node5">Probing Agent</div>
+<div class="node" id="node6">Federated Learning</div>
+<div class="node" id="node7">Compliance Decision</div>
+
+</div>
+
+<div id="flowExplain">
+<h3>Regulatory Knowledge Modeling</h3>
+<p>
+Regulatory frameworks such as ISO 42001 and GDPR are converted into
+structured knowledge graphs representing compliance obligations
+and risk relationships.
+</p>
+</div>
+
+</div>
+
+<div class="media">
+<img id="flowImage" src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
 
 <section class="slide">
 
@@ -390,43 +403,13 @@ audit-ready regulatory evidence.
 
 <h2><span class="highlight">Connect With CompliAI</span></h2>
 
-<p>
-For enterprise discussions, demonstrations or collaboration,
-please contact the CompliAI support team.
-</p>
+<p><strong>support@compliai.co.in</strong></p>
 
 <p>
-<strong>Support</strong><br>
-support@compliai.co.in
-</p>
-
-<p>
-<strong>About the Inventors</strong>
-</p>
-
-<p>
-The inventors behind CompliAI bring more than
-<span class="highlight">18 years of experience</span>
-across the
-<span class="highlight">Banking</span>,
-<span class="highlight">Healthcare</span>,
-and
-<span class="highlight">Telecommunications</span>
-industries.
-</p>
-
-<p>
-They have contributed extensively to research in artificial
-intelligence, compliance automation and intelligent system
-architectures with several international
-<span class="highlight">research publications</span>.
-</p>
-
-<p>
-The inventors also possess
-<span class="highlight">doctoral research credentials</span>
-and continue to be involved in advanced research scholar
-programs related to intelligent regulatory technologies.
+The inventors behind CompliAI bring more than 18 years of experience
+across banking, healthcare and telecommunications industries.
+They have authored multiple research publications in AI
+and regulatory technology.
 </p>
 
 </div>
@@ -446,6 +429,8 @@ programs related to intelligent regulatory technologies.
 
 <script>
 
+/* SLIDE NAVIGATION */
+
 let slide=0;
 
 function gotoSlide(n){
@@ -454,22 +439,83 @@ document.getElementById("slides").style.transform="translateX(-"+slide*100+"vw)"
 }
 
 function moveSlide(dir){
-
 slide+=dir;
-
 if(slide<0) slide=0;
-if(slide>5) slide=5;
-
+if(slide>6) slide=6;
 gotoSlide(slide);
+}
+
+
+/* AI ENGINE ANIMATION */
+
+let step=1;
+
+const steps=[
+
+{
+title:"Regulatory Knowledge Modeling",
+text:"Regulatory frameworks are transformed into structured knowledge graphs representing obligations and risk relationships.",
+img:"https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
+},
+
+{
+title:"Intent Extraction",
+text:"Natural language reasoning models extract the purpose behind regulatory clauses enabling machine interpretation.",
+img:"https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+},
+
+{
+title:"Digital Twin Model",
+text:"A digital twin maps regulatory obligations to enterprise systems and operational workflows.",
+img:"https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+},
+
+{
+title:"Quantum Search",
+text:"Quantum-inspired search explores multiple compliance relationships simultaneously.",
+img:"https://images.unsplash.com/photo-1504639725590-34d0984388bd"
+},
+
+{
+title:"Probing Agent",
+text:"Autonomous agents evaluate enterprise systems against compliance models.",
+img:"https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
+},
+
+{
+title:"Federated Learning",
+text:"Distributed compliance intelligence is generated while preserving enterprise privacy.",
+img:"https://images.unsplash.com/photo-1555255707-c07966088b7b"
+},
+
+{
+title:"Compliance Decision",
+text:"Continuous compliance risk decisions are generated for enterprise governance.",
+img:"https://images.unsplash.com/photo-1553877522-43269d4ea984"
+}
+
+];
+
+
+function animateEngine(){
+
+if(slide!==5) return;
+
+document.querySelectorAll(".node").forEach(n=>n.classList.remove("active"));
+
+document.getElementById("node"+step).classList.add("active");
+
+document.getElementById("flowExplain").innerHTML=
+"<h3>"+steps[step-1].title+"</h3><p>"+steps[step-1].text+"</p>";
+
+document.getElementById("flowImage").src=steps[step-1].img;
+
+step++;
+if(step>7) step=1;
 
 }
 
-document.addEventListener("keydown",function(e){
-
-if(e.key==="ArrowRight") moveSlide(1);
-if(e.key==="ArrowLeft") moveSlide(-1);
-
-});
+setInterval(animateEngine,4000);
 
 </script>
 
